@@ -22,7 +22,7 @@ describe('test find code', () => {
 
 describe('test process calibration', () => {
     test('example one', () => {
-        let test_lines = read_file('./test/test-text-1.txt');
+        let test_lines = read_file('./test/test-1-1.txt');
         expect(process_calibration(test_lines)).toBe(142);
     });
 
