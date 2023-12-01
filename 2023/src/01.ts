@@ -10,3 +10,11 @@ export function find_code(calibration_line: string): number {
 
     return Number(code + code_end);
 }
+
+export function process_calibration(lines: string[]): number {
+    let calibration = 0;
+    for (let line of lines) {
+        calibration += find_code(line);
+    }
+    return calibration;
+}
