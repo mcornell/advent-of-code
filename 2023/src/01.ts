@@ -5,7 +5,8 @@ export function find_code(calibration_line: string): number {
             numbers.push(value);
         }
     }
-    let code = numbers?.shift() ?? "0" + numbers?.pop() ?? "0";
-    
-    return Number(code);
+    let code = numbers?.shift() ?? "0";
+    let code_end =  numbers?.pop() ?? "0";
+
+    return Number(code + code_end);
 }
