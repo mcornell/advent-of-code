@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"author": "Mike Cornell",
 	"devDependencies": {
+		"jest": "^29.7.0",
 		"typescript": "^5.3.2"
 	},
 	"scripts": {
