@@ -25,4 +25,9 @@ describe('test process calibration', () => {
         let test_lines = read_file('./test/test-text-1.txt');
         expect(process_calibration(test_lines)).toBe(142);
     });
+
+    test('puzzle one', () => {
+        let test_lines = read_file('./test/puzzle-1-1.txt');
+        expect(process_calibration(test_lines)).toBe(55538);
+    });
 });
