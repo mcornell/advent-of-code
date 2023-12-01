@@ -1,4 +1,4 @@
-function find_code(calibration_line: string): number {
+export function find_code(calibration_line: string): number {
     let numbers: string[] = [];
     for (let value of calibration_line) {
         if (!isNaN(Number(value))) {
