@@ -1,4 +1,4 @@
-import { find_code, find_word_codes, process_calibration } from '../src/01';
+import { find_code, find_word_codes, process_calibration, process_calibration_words } from '../src/01';
 import { read_file } from '../src/utils';
 
 describe('test find code', () => {
@@ -56,6 +56,17 @@ describe('test find word codes', ()  => {
     });
 });
 
+describe('test process calibration words', () => {
+    test('example one', () => {
+        let test_lines = read_file('./test/test-1-2.txt');
+        expect(process_calibration_words(test_lines)).toBe(281);
+    });
+
+    test('puzzle one', () => {
+        let test_lines = read_file('./test/puzzle-1-1.txt');
+        expect(process_calibration_words(test_lines)).toBe(54743);
+    });
+});
 
 
 

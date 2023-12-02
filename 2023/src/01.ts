@@ -13,8 +13,6 @@ export function find_code(calibration_line: string): number {
 
 export function find_word_codes(calibration_line: string): number {
 
-
-    console.log(calibration_line);
     const numbers_words: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
     const numbers: string[] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
@@ -26,7 +24,6 @@ export function find_word_codes(calibration_line: string): number {
         if (index > -1 && index < first_number_index) {
             first_number_index = index;
             first_number_string = num;
-            console.log('found ' + num + " at " + index);
         }
     }
     for (let num of numbers) {
@@ -34,7 +31,6 @@ export function find_word_codes(calibration_line: string): number {
         if (index > -1 && index < first_number_index) {
             first_number_index = index;
             first_number_string = num;
-            console.log('found ' + num + " at " + index);
         }
     }
     if (numbers_words.indexOf(first_number_string) > -1) {
@@ -42,7 +38,6 @@ export function find_word_codes(calibration_line: string): number {
     } else {
         first_number = numbers.indexOf(first_number_string);
     }
-    console.log("first is:" +first_number);
 
     // find back LastIndexOf
     let last_number = -1;
@@ -53,7 +48,6 @@ export function find_word_codes(calibration_line: string): number {
         if (index > -1 && index > last_number_index) {
             last_number_index = index;
             last_number_string = num;
-            console.log('found ' + num + " at " + index);
         }
     }
     for (let num of numbers) {
@@ -61,7 +55,6 @@ export function find_word_codes(calibration_line: string): number {
         if (index > -1 && index > last_number_index) {
             last_number_index = index;
             last_number_string = num;
-            console.log('found ' + num + " at " + index);
         }
     }
     if (numbers_words.indexOf(last_number_string) > -1) {
@@ -69,8 +62,6 @@ export function find_word_codes(calibration_line: string): number {
     } else {
         last_number = numbers.indexOf(last_number_string);
     }
-    console.log("last is:"+last_number);
-    
 
     return first_number * 10 + last_number;
 }
@@ -79,6 +70,13 @@ export function process_calibration(lines: string[]): number {
     let calibration = 0;
     for (let line of lines) {
         calibration += find_code(line);
+    }
+    return calibration;
+}
+export function process_calibration_words(lines: string[]): number {
+    let calibration = 0;
+    for (let line of lines) {
+        calibration += find_word_codes(line);
     }
     return calibration;
 }
