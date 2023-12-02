@@ -1,5 +1,5 @@
 import { read_file } from '../src/utils';
-import { is_game_possible } from '../src/02';
+import { is_game_possible, process_games } from '../src/02';
 
 describe('test find code', () => {
     test('example one', () => {
@@ -16,5 +16,16 @@ describe('test find code', () => {
     });
     test('example 5', () => {
         expect(is_game_possible('6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green')).toBe(true);
+    });
+});
+
+describe('test process games', () =>{
+    test('example 1', () => {
+        let test_lines = read_file('./test/test-2-1.txt');
+        expect(process_games(test_lines)).toBe(8);
+    });
+    test('puzzle 1', () => {
+        let test_lines = read_file('./test/puzzle-2-1.txt');
+        expect(process_games(test_lines)).toBe(3099);
     });
 });
