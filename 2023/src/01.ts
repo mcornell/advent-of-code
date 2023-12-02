@@ -76,12 +76,8 @@ export function process_calibration(lines: string[]): number {
 export function process_calibration_words(lines: string[]): number {
     let calibration = 0;
     for (const [index, line] of lines.entries()) {
-        console.log("line: " + index + ": " + line);    
         calibration+= find_word_codes(line);
     }
-    // for (let line of lines) {
-    //     calibration += find_word_codes(line);
-    // }
     
     return calibration;
 }

@@ -67,7 +67,7 @@ describe('test process calibration words', () => {
 
     test('puzzle one', () => {
         let test_lines = read_file('./test/puzzle-1-1.txt');
-        expect(process_calibration_words(test_lines)).toBe(54743);
+        expect(process_calibration_words(test_lines)).toBe(54875);
     });
 });
 
