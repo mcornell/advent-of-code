@@ -41,7 +41,7 @@ export function find_word_codes(calibration_line: string): number {
 
     // find back LastIndexOf
     let last_number = -1;
-    let last_number_index = 0;
+    let last_number_index = -1;
     let last_number_string = "NaN";
     for (let num of numbers_words) {
         const index = calibration_line.lastIndexOf(num);
@@ -75,8 +75,13 @@ export function process_calibration(lines: string[]): number {
 }
 export function process_calibration_words(lines: string[]): number {
     let calibration = 0;
-    for (let line of lines) {
-        calibration += find_word_codes(line);
+    for (const [index, line] of lines.entries()) {
+        console.log("line: " + index + ": " + line);    
+        calibration+= find_word_codes(line);
     }
+    // for (let line of lines) {
+    //     calibration += find_word_codes(line);
+    // }
+    
     return calibration;
 }

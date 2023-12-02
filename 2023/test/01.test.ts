@@ -54,6 +54,9 @@ describe('test find word codes', ()  => {
     test('example 7', () => {
         expect(find_word_codes('7pqrstsixteen')).toBe(76);
     });
+    test('weird thing', () => {
+        expect(find_word_codes('1vqxhglhnhrpbnlvq')).toBe(11);
+    })
 });
 
 describe('test process calibration words', () => {
