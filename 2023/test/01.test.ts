@@ -49,7 +49,7 @@ describe('test find word codes', ()  => {
         expect(find_word_codes('4nineeightseven2')).toBe(42);
     });
     test('example 6', () => {
-        expect(find_word_codes('two1ninzoneight234e')).toBe(14);
+        expect(find_word_codes('zoneight234')).toBe(14);
     });
     test('example 7', () => {
         expect(find_word_codes('7pqrstsixteen')).toBe(76);
