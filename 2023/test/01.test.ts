@@ -1,4 +1,4 @@
-import { find_code, process_calibration } from '../src/01';
+import { find_code, find_word_codes, process_calibration } from '../src/01';
 import { read_file } from '../src/utils';
 
 describe('test find code', () => {
@@ -31,3 +31,33 @@ describe('test process calibration', () => {
         expect(process_calibration(test_lines)).toBe(55538);
     });
 });
+
+describe('test find word codes', ()  => {
+    test('example one', () => {
+        expect(find_word_codes('two1nine')).toBe(29);
+    });
+    test('example two', () => {
+        expect(find_word_codes('eightwothree')).toBe(83);
+    });
+    test('example 3', () => {
+        expect(find_word_codes('abcone2threexyz')).toBe(13);
+    });
+    test('example 4', () => {
+        expect(find_word_codes('xtwone3four')).toBe(24);
+    });
+    test('example 5', () => {
+        expect(find_word_codes('4nineeightseven2')).toBe(42);
+    });
+    test('example 6', () => {
+        expect(find_word_codes('two1ninzoneight234e')).toBe(14);
+    });
+    test('example 7', () => {
+        expect(find_word_codes('7pqrstsixteen')).toBe(76);
+    });
+});
+
+
+
+
+
+
